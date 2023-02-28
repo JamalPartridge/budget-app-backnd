@@ -5,5 +5,24 @@
     "express": "^4.18.2",
     "gitignore": "^0.7.0",
     "morgan": "^1.10.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "backend",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamalPartridge/budget-app-backnd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamalPartridge/budget-app-backnd/issues"
+  },
+  "homepage": "https://github.com/JamalPartridge/budget-app-backnd#readme"
 }
