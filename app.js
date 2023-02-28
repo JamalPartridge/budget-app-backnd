@@ -2,6 +2,7 @@
 const express = require("express");
 const transctionsController = require('./controllers/TransactionsController')
 const cors = require('cors')
+const morgan = require('morgan')
 
 // CONFIGURATION
 const app = express();
@@ -9,6 +10,11 @@ const app = express();
 // MIDDLEWARE  
 app.use(express.json());
 app.use(cors())
+app.use(morgan('tiny'))
+app.use((req, res, next) => {
+  console.log("this runs for every request");
+  next();
+})
 app.use("/transtions", transctionsController);
 
 // Routes

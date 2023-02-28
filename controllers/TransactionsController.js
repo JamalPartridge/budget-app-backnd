@@ -4,26 +4,26 @@ const transactionsArray = require('../models/transactions')
 const { validateURL } = require('../validations/validations')
 
   // INDEX
-    transactions.get("/", (req, res) => {
-   res.status(200).json(transactionsArray)
+  transactions.get("/", (req, res) => {
+    res.json(transactionsArray)
 });
 
   // SHOW
-    transactions.get("/:index", (req, res) => {
+  transactions.get("/:index", (req, res) => {
     const { index } = req.params;
     if (transactionsArray[index]) {
-      res.json(transactionsArray[index]);
+      res.send(transactionsArray[index]);
     } else res.status(404).send("No such item exists");
   });  
 
   // CREATE
-    transactions.post("/", validateURL, (req, res) => {
+  transactions.post("/", validateURL, (req, res) => {
     transactionsArray.push(req.body);
     res.status(200).json(transactionsArray);
   });
   
   // UPDATE
-        transactions.put("/:index", (req, res) => {
+  transactions.put("/:index", (req, res) => {
     const { index } = req.params;
     if (transactionsArray[index]) {
       transactionsArray[index] = req.body;
@@ -34,7 +34,7 @@ const { validateURL } = require('../validations/validations')
   });
 
   // DELETE
-    transactions.delete("/:index", (req, res) => {
+  transactions.delete("/:index", (req, res) => {
     const { index } = req.params;
     if (transactionsArray[index]) {
       const deleted = transactionsArray.splice(index, 1);
