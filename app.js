@@ -15,7 +15,7 @@ app.use((req, res, next) => {
   console.log("this runs for every request");
   next();
 })
-app.use("/transtions", transctionsController);
+app.use("/transactions", transctionsController);
 
 // Routes
 app.get("/", (req, res) => {
